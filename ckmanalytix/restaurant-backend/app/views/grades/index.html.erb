@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Grades</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dba</th>
+      <th>Boro</th>
+      <th>Building</th>
+      <th>Street</th>
+      <th>Zipcode</th>
+      <th>Cuisine description</th>
+      <th>Violation description</th>
+      <th>Critical flag</th>
+      <th>Score</th>
+      <th>Grade</th>
+      <th>Grade date</th>
+      <th>Record date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @grades.each do |grade| %>
+      <tr>
+        <td><%= grade.dba %></td>
+        <td><%= grade.boro %></td>
+        <td><%= grade.building %></td>
+        <td><%= grade.street %></td>
+        <td><%= grade.zipcode %></td>
+        <td><%= grade.cuisine_description %></td>
+        <td><%= grade.violation_description %></td>
+        <td><%= grade.critical_flag %></td>
+        <td><%= grade.score %></td>
+        <td><%= grade.grade %></td>
+        <td><%= grade.grade_date %></td>
+        <td><%= grade.record_date %></td>
+        <td><%= link_to 'Show', grade %></td>
+        <td><%= link_to 'Edit', edit_grade_path(grade) %></td>
+        <td><%= link_to 'Destroy', grade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Grade', new_grade_path %>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @email.content %>
+</p>
+
+<p>
+  <strong>:</strong>
+  <%= @email. %>
+</p>
+
+<p>
+  <strong>Citizen:</strong>
+  <%= @email.citizen_id %>
+</p>
+
+<p>
+  <strong>Sender:</strong>
+  <%= @email.sender_id %>
+</p>
+
+<p>
+  <strong>Citizen active:</strong>
+  <%= @email.citizen_active %>
+</p>
+
+<p>
+  <strong>Receiver active:</strong>
+  <%= @email.receiver_active %>
+</p>
+
+<%= link_to 'Edit', edit_email_path(@email) %> |
+<%= link_to 'Back', emails_path %>

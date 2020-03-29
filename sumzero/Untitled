@@ -1,0 +1,57 @@
+https://codesandbox.io/s/m32fp
+
+import React from "react";
+import ReactDOM from "react-dom";
+
+import "./styles.css";
+
+// https://api.iextrading.com/1.0/stock/SYMBOL/book
+// e.g. https://api.iextrading.com/1.0/stock/aapl/book
+// aapl, goog, nflx
+//buttons do the api call for each company
+// show symbol, company name, latest price, sector
+
+class App extends React.Component {
+  state = {
+    stock: {}
+  };
+
+  fetchStock = company => {
+    fetch(`https://api.iextrading.com/1.0/stock/${company}/book`)
+      .then(r => r.json())
+      .then(r => {
+        this.setState({ stock: r });
+      });
+  };
+
+  renderStock = () => {
+    // return (
+      <div>{this.state.stock.symbol}</div>;
+    )
+  };
+
+  handleStock = (company) => {
+    if (company = "aapl") {
+      this.fetchStock("appl")
+    } else if (company = "goog") {
+      this.fetchStock("goog")
+    } else if (company = "nflx") {
+      this.fetchStock("nflx")
+    }
+  }
+
+  render() {
+    console.log(this.state.stock);
+    return (
+      <div className="App">
+        <button onClick={this.handleStock("aapl")}>Apple</button>
+        <button onClick={this.handleStock("goog")}>Google</button>
+        <button onClick={this.handleStock("nflx")}>Netflix</button>
+        {this.renderStock()}
+      </div>
+    );
+  }
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);

@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dba: MyString
+  boro: MyString
+  building: 1
+  street: MyString
+  zipcode: 1
+  cuisine_description: MyString
+  violation_description: MyString
+  critical_flag: MyString
+  score: 1
+  grade: MyString
+  grade_date: MyString
+  record_date: MyString
+
+two:
+  dba: MyString
+  boro: MyString
+  building: 1
+  street: MyString
+  zipcode: 1
+  cuisine_description: MyString
+  violation_description: MyString
+  critical_flag: MyString
+  score: 1
+  grade: MyString
+  grade_date: MyString
+  record_date: MyString

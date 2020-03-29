@@ -1,0 +1,77 @@
+<%= form_with(model: grade, local: true) do |form| %>
+  <% if grade.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(grade.errors.count, "error") %> prohibited this grade from being saved:</h2>
+
+      <ul>
+      <% grade.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :dba %>
+    <%= form.text_field :dba, id: :grade_dba %>
+  </div>
+
+  <div class="field">
+    <%= form.label :boro %>
+    <%= form.text_field :boro, id: :grade_boro %>
+  </div>
+
+  <div class="field">
+    <%= form.label :building %>
+    <%= form.number_field :building, id: :grade_building %>
+  </div>
+
+  <div class="field">
+    <%= form.label :street %>
+    <%= form.text_field :street, id: :grade_street %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zipcode %>
+    <%= form.number_field :zipcode, id: :grade_zipcode %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cuisine_description %>
+    <%= form.text_field :cuisine_description, id: :grade_cuisine_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :violation_description %>
+    <%= form.text_field :violation_description, id: :grade_violation_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :critical_flag %>
+    <%= form.text_field :critical_flag, id: :grade_critical_flag %>
+  </div>
+
+  <div class="field">
+    <%= form.label :score %>
+    <%= form.number_field :score, id: :grade_score %>
+  </div>
+
+  <div class="field">
+    <%= form.label :grade %>
+    <%= form.text_field :grade, id: :grade_grade %>
+  </div>
+
+  <div class="field">
+    <%= form.label :grade_date %>
+    <%= form.text_field :grade_date, id: :grade_grade_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :record_date %>
+    <%= form.text_field :record_date, id: :grade_record_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
